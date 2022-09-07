@@ -123,3 +123,17 @@
 @keyframes preloader {
   100% { transform: scale(2); }
 }
+
+@media screen and (max-width: 400px) and (min-width: 200px){
+
+  .my-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .brand-logo {
+    width: 80%;
+    background-color: aquamarine;
+    font-size: 1em;
+  }
+}
