@@ -1,5 +1,8 @@
 .my-nav,
 .my-footer {
+  margin-top: 0.3%;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: rgb(84, 168, 39);
 }
 

@@ -1,15 +1,18 @@
-const root = document.getElementById('root')
-const mujer = document.getElementById('mujer')
-const hombre = document.getElementById('hombre')
-const todos = document.getElementById('todos')
-const loader = document.getElementById('contenedor-espera')
+const root = document.getElementById('root');
+const mujer = document.getElementById('mujer');
+const hombre = document.getElementById('hombre');
+const todosGenero = document.getElementById('todos-genero');
+const alien = document.getElementById('alien');
+const humano = document.getElementById('humano');
+const todosEspecie = document.getElementById('todos-especie');
+const loader = document.getElementById('contenedor-espera');
 
-const paginaActual = document.querySelector('#pagina-actual')
-const totalPaginas = document.querySelector('#total-paginas')
-const firstPage = document.querySelector('#first-page')
-const nextPage = document.querySelector('#next-page')
-const previusPage = document.querySelector('#previus-page')
-const lastPage = document.querySelector('#last-page')
+const paginaActual = document.querySelector('#pagina-actual');
+const totalPaginas = document.querySelector('#total-paginas');
+const firstPage = document.querySelector('#first-page');
+const nextPage = document.querySelector('#next-page');
+const previusPage = document.querySelector('#previus-page');
+const lastPage = document.querySelector('#last-page');
 
 let pagina = 1;
 let total = 0;
@@ -23,7 +26,7 @@ const getData = async() => {
     printData(json.results)
     total = json.info.pages
     paginaActual.innerHTML = pagina
-    totalPaginas.innerHTML = total
+    totalPaginas.innerHTML = pagina
     data = json
     updatePagination();
     setTimeout(() => {
@@ -66,14 +69,28 @@ const printData  = json => {
 mujer.addEventListener('click', (e) => {
     const female = data.results.filter(personaje => personaje.gender === 'Female');
     printData(female)
-    console.log(data);
 })
 hombre.addEventListener('click', (e) => {
     const male  = data.results.filter(personaje => personaje.gender === 'Male');
     printData(male)
 })
 
-todos.addEventListener('click', (e) => {
+todosGenero.addEventListener('click', (e) => {
+    const todos  = data.results
+    printData(todos)
+})
+
+alien.addEventListener('click', (e) => {
+    const alien = data.results.filter(personaje => personaje.species === 'Alien');
+    printData(alien)
+})
+
+humano.addEventListener('click', (e) => {
+    const humano  = data.results.filter(personaje => personaje.species === 'Human');
+    printData(humano)
+})
+
+todosEspecie.addEventListener('click', (e) => {
     const todos  = data.results
     printData(todos)
 })
