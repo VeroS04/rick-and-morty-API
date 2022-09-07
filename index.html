@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./imagenes/iconRM.jpg" />
     <title>Rick and Morty</title>
 </head>
 <body>
@@ -42,9 +43,15 @@
     </div>
   </nav>
 
-  <div class="container-fluid">
-    <di id="root" class="row">
-    </di>
+  <div class="container-fluid " id="loader">
+    <div id="contenedor-espera" class="contenedor">
+      <div class="espera1 div"></div>
+      <div class="espera2 div"></div>
+      <div class="espera3 div"></div>
+    </div>
+  </div>
+
+  <div id="root" class="row">
   </div>
 
   <div class="container-paginador">

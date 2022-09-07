@@ -2,7 +2,7 @@ const root = document.getElementById('root')
 const mujer = document.getElementById('mujer')
 const hombre = document.getElementById('hombre')
 const todos = document.getElementById('todos')
-const loader = document.getElementById('contenedor')
+const loader = document.getElementById('contenedor-espera')
 
 const paginaActual = document.querySelector('#pagina-actual')
 const totalPaginas = document.querySelector('#total-paginas')
@@ -15,26 +15,21 @@ let pagina = 1;
 let total = 0;
 
 const getData = async() => {
+    loader.classList.remove('esconder')
+    root.classList.add('esconder')
     const url = `https://rickandmortyapi.com/api/character/?page=${pagina}`;
-    // fetch(url)
-    //     .then(resp => resp.json())
-    //     .then(json => {
-    //         printData(json.results)
-    //         data = json;
-    //     })
-    //     .catch(err => console.error(err))
     const resp = await fetch(url)
     const json = await resp.json()
     printData(json.results)
     total = json.info.pages
     paginaActual.innerHTML = pagina
-    totalPaginas.innerHTML = pagina
+    totalPaginas.innerHTML = total
     data = json
     updatePagination();
     setTimeout(() => {
-        loader.classList.add('escoonder')
+        loader.classList.add('esconder')
         root.classList.remove('esconder')
-    })
+    },1000)
     return json
 }
 
