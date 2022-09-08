@@ -132,8 +132,7 @@
   }
 
   .brand-logo {
-    width: 80%;
-    background-color: aquamarine;
-    font-size: 1em;
+    width: 100%;
+    font-size: 0.8em;
   }
 }
