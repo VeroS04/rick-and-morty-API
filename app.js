@@ -26,7 +26,7 @@ const getData = async() => {
     printData(json.results)
     total = json.info.pages
     paginaActual.innerHTML = pagina
-    totalPaginas.innerHTML = pagina
+    totalPaginas.innerHTML = total
     data = json
     updatePagination();
     setTimeout(() => {

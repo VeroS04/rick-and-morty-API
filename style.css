@@ -120,6 +120,33 @@
   margin-top: 15%;
 }
 
+.container-iconos-footer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.img-item-footer {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icono-footer {
+  font-size: 20px;
+  color: rgb(23, 67, 23);
+}
+
+.img-item-footer:active {
+  box-shadow: -1px 1px 10px 5px #285630;
+}
+
+.icono-footer:hover {
+  font-size: 20px;
+  color: rgb(160, 82, 37);
+}
+
 @keyframes preloader {
   100% { transform: scale(2); }
 }
@@ -134,5 +161,9 @@
   .brand-logo {
     width: 100%;
     font-size: 0.8em;
+  }
+
+  .pagination {
+    margin: auto;
   }
 }
